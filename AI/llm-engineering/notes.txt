@@ -1,4 +1,5 @@
-Course Notes for Udemy course: https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/
+Course Notes for Udemy course:  AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents
+Link: https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/
 
 # Day 1 Notes ###############################################
 
