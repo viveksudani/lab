@@ -1,0 +1,86 @@
+Course Notes for Udemy course: https://www.udemy.com/course/llm-engineering-master-ai-and-large-language-models/
+
+# Day 1 Notes ###############################################
+
+1. Setup ollama & Play with open source models locally
+
+ollama # check installation
+ollama serve
+ollama run gemma3:270m  #250 MB download
+ollama run phi3  # 2.2 GB downloads
+
+
+2. Setup UV (from powershell)
+
+uv --version
+uv self update
+uv sync
+
+
+3. Setup Open AI API key
+
+# Day 2 Notes ###############################################
+
+- Understand API call for chat completions
+- Uderstand OpenAI class is just API call wrapper and also supports diffrent models via base_url & auth_key
+- OpenAI api class can be used to interact with locally running models via ollama as well:
+
+from openai import OpenAI
+OLLAMA_BASE_URL = "http://localhost:11434/v1"
+
+ollama = OpenAI(base_url=OLLAMA_BASE_URL, api_key='ollama')
+response = ollama.chat.completions.create(model="phi3", messages=[{"role": "user", "content": "Tell me a fun fact"}])
+
+response.choices[0].message.content
+
+# Day 3 Notes ###############################################
+
+3 flavors of LLMs
+Base model -> Complete sequence
+# Better for fine-tuning to learn a new skills
+
+Chat / Instruct 
+# better for interactive use cases and creative content generation
+
+Reasoning / Thinking  --> Budget forcing - Wait
+# Better for problem solving
+
+Frontier models and thier chat products:
+OpenAI - GPT - ChatGPT
+Anthropic - Claude - Claude
+Google - Gemini - Gemini Advance
+x.ai - Grok - Grok
+Deepseek AI - Deepseek - DeepSeek
+
+# Day 4 Notes ###############################################
+GPT - Generative Pre-trained Transformer
+
+Attention is all you need! - paper -- 2017
+
+Parameters
+GPT1 - 117M
+GPT2 - 1.5B
+GPT3 - 175B
+GPT4 - 1.76T
+More parameters -- More time to train
+
+Tokens - https://platform.openai.com/tokenizer
+
+1. Every call to an LLM is stateless
+2. We pass in the entire conversation so far in the input prompt, every time
+3. This gives the illusion that the LLM has memory - it apparently keeps the context of the conversation
+4. But this is a trick; it's a by-product of providing the entire conversation, every time
+5. An LLM just predicts the most likely next tokens in the sequence; if that sequence contains "My name is Ed" and later "What's my name?" then it will predict.. Ed!
+
+- LLMs predict token by token.Predicts one token, then entire sentence is again sent to LLM as input to predict next token.
+
+https://www.vellum.ai/llm-leaderboard
+
+# Day 5 Notes ###############################################
+
+- Bulding a sales broacher app to using prompt chaining.
+	1. collect useful links from website, and use LLM to filter relevent links
+	2. collect website content
+	3. Pass links and site content to LLM to create sales broacher using system prompt and user prompt
+	4. Use steaming to visualze token genetation in realtime.
+
