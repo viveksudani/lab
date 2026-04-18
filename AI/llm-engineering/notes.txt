@@ -120,3 +120,9 @@ def shout(text):
 
 gr.Interface(fn=shout, inputs="textbox", outputs="textbox", flagging_mode="never").launch()
 gr.Interface(fn=shout, inputs="textbox", outputs="textbox", flagging_mode="never").launch(inbrowser=True, auth=("vivek", "simplepass"))
+
+# Day 3 Notes ###############################################
+
+- Chatbot UI using gradio, with stearming
+- One shot prompting, Multi shot prompting examples with chatbot
+- Dynamic system promt based on user input - similar to RAG
