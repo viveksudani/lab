@@ -126,3 +126,38 @@ gr.Interface(fn=shout, inputs="textbox", outputs="textbox", flagging_mode="never
 - Chatbot UI using gradio, with stearming
 - One shot prompting, Multi shot prompting examples with chatbot
 - Dynamic system promt based on user input - similar to RAG
+
+# Day 4 Notes ###############################################
+
+Tools - allows models to connect with external functions
+- An LLM only generates tokens! Our code calls the tools!
+- A tool can be used to make another call to an LLM
+- A tool can be used to track a ToDo list and track towards a goal
+
+def handle_tool_calls(message):
+    responses = []
+    for tool_call in message.tool_calls:
+        if tool_call.function.name == "get_ticket_price":
+            arguments = json.loads(tool_call.function.arguments)
+            city = arguments.get('destination_city')
+            price_details = get_ticket_price(city)
+            responses.append({
+                "role": "tool",
+                "content": price_details,
+                "tool_call_id": tool_call.id
+            })
+    return responses
+
+def chat(message, history):
+    history = [{"role":h["role"], "content":h["content"]} for h in history]
+    messages = [{"role": "system", "content": system_message}] + history + [{"role": "user", "content": message}]
+    response = openai.chat.completions.create(model=MODEL, messages=messages, tools=tools)
+
+    while response.choices[0].finish_reason=="tool_calls":
+        message = response.choices[0].message
+        responses = handle_tool_calls(message)
+        messages.append(message)
+        messages.extend(responses)
+        response = openai.chat.completions.create(model=MODEL, messages=messages, tools=tools)
+    
+    return response.choices[0].message.content
