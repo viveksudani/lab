@@ -161,3 +161,18 @@ def chat(message, history):
         response = openai.chat.completions.create(model=MODEL, messages=messages, tools=tools)
     
     return response.choices[0].message.content
+
+# Day 5 Notes ###############################################
+
+Agents:
+"LLM that controls the workflow"
+"An LLM agent runs tools in a loop to achieve a goal"
+
+Memory / Persistance
+Planning capabilities
+Autonomy
+LLM orchestaction via Tools
+Functionality via Tools
+
+Built multi-model application:
+- Chatbot with databse price tool call, image generation, and audio generation.
