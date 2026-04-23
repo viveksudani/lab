@@ -176,3 +176,12 @@ Functionality via Tools
 
 Built multi-model application:
 - Chatbot with databse price tool call, image generation, and audio generation.
+
+
+# Week3 Notes
+# Day 1 Notes ###############################################
+
+Hugging face plateform - models, datasets, spaces
+Hugging face libraries - hub. datasets, transformers, peft, trl, accelerate
+
+- Run image generation on google colab
