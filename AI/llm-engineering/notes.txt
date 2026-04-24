@@ -185,3 +185,17 @@ Hugging face plateform - models, datasets, spaces
 Hugging face libraries - hub. datasets, transformers, peft, trl, accelerate
 
 - Run image generation on google colab
+
+
+# Day 2 Notes ###############################################
+
+Pipelines - Higher level
+	- Sentiment analysis
+	- Classifier
+	- Q & A
+	- Named entity recognition
+	- Summarizing
+	- Translation
+
+- Tokenizers and models - Lower level
+- Inference means execute or run with new data
