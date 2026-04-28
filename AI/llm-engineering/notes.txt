@@ -207,3 +207,40 @@ Tokenizer - Maps between Text and Tokens for a perticular model
 - Token Id - number
 
 - Call various open source tokenizers using transformers.AutoTokenizer
+
+# Day 4 Notes ###############################################
+
+Quantization
+Model Internals
+Stearming
+
+def generate(model, messages, quant=True, max_new_tokens=80):
+  tokenizer = AutoTokenizer.from_pretrained(model)
+  tokenizer.pad_token = tokenizer.eos_token
+  input_ids = tokenizer.apply_chat_template(messages, return_tensors="pt", add_generation_prompt=True).to("cuda")
+  attention_mask = torch.ones_like(input_ids, dtype=torch.long, device="cuda")
+  streamer = TextStreamer(tokenizer)
+  if quant:
+    model = AutoModelForCausalLM.from_pretrained(model, quantization_config=quant_config).to("cuda")
+  else:
+    model = AutoModelForCausalLM.from_pretrained(model).to("cuda")
+  outputs = model.generate(input_ids=input_ids, attention_mask=attention_mask, max_new_tokens=max_new_tokens, streamer=streamer)
+
+# Day 5 Notes ###############################################
+
+- Visualze and understand : LLMs are staticals models to predict next plausible token
+- Speech to text and meeting notes using frontier models
+
+from transformers import pipeline
+
+pipe = pipeline(
+    "automatic-speech-recognition",
+    model="openai/whisper-medium.en",
+    dtype=torch.float16,
+    device='cuda',
+    return_timestamps=True
+)
+
+result = pipe(audio_filename)
+transcription = result["text"]
+print(transcription)
