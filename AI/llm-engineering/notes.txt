@@ -244,3 +244,36 @@ pipe = pipeline(
 result = pipe(audio_filename)
 transcription = result["text"]
 print(transcription)
+
+# Week4 Notes
+# Day 1 Notes ###############################################
+
+Comparing LLMs
+- Open-source or closed
+- Chat / Rasoning / Hybrid
+- Realease date and knowledge cut-off
+- Parameters
+- Training tokens
+- Context window
+
+- Inference cost
+		API Charge or runtime compure
+- Training cost
+- Build cost
+- Time to market
+- Rate limits
+- Speed
+- Latency (time to first token)
+- License
+
+
+- The Chinchilla Scaling Law
+	- Double the no. of parameters -- need double training data
+
+Benchmarks
+- GPQA, MMLU-PRO, AIME, LiveCode Bench, MuSR, HLE
+
+Limitation of Benchmarks
+- Training Data Contamination
+- Too narrow in scope
+- Overfitting
