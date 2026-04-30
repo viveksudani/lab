@@ -277,3 +277,11 @@ Limitation of Benchmarks
 - Training Data Contamination
 - Too narrow in scope
 - Overfitting
+
+# Day 2 Notes ###############################################
+
+Leaderboards
+- https://artificialanalysis.ai/
+- https://www.vellum.ai/llm-leaderboard
+- https://labs.scale.com/leaderboard/humanitys_last_exam
+- https://livebench.ai/
