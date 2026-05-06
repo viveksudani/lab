@@ -285,3 +285,13 @@ Leaderboards
 - https://www.vellum.ai/llm-leaderboard
 - https://labs.scale.com/leaderboard/humanitys_last_exam
 - https://livebench.ai/
+
+- https://arena.ai/ -- Feedback by real users
+
+# Day 3 Notes ###############################################
+- User frontier models to convert python code to c++
+	- GPT-5, Claude Sonet4.5, Grok 4, Gemini 2.5 Pro
+
+# Day 4 Notes ###############################################
+- User open source models to convert python code to c++
+	- GPT oss 20b, Quen 3 coder 30B, Deepseek coder v2, Quen 2.5 code
