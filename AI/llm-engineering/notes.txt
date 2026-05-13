@@ -295,3 +295,11 @@ Leaderboards
 # Day 4 Notes ###############################################
 - User open source models to convert python code to c++
 	- GPT oss 20b, Quen 3 coder 30B, Deepseek coder v2, Quen 2.5 code
+
+# Day 5 Notes ###############################################
+- How to evaluate the performance of a Gen AI Solution?
+	- Model centric or Technical Metrics - Easiet to optimize with
+	- Business centric or Outcome Metrics - More tanginble impact
+
+- User open source & frontier  models to convert python code to rust
+- Developed gradio UI to convert python code into rust using different models and see generated code execution results
