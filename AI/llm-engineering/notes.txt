@@ -303,3 +303,15 @@ Leaderboards
 
 - User open source & frontier  models to convert python code to rust
 - Developed gradio UI to convert python code into rust using different models and see generated code execution results
+
+# Week5 Notes
+# Day 1 Notes ###############################################
+RAG - Retrivial Augmented Generation - Improve prompt by relevent information
+Chat -> Question -> Vectorize question -> Vector database lookup -> Insert info in prompt -> Send to LLM
+
+- Need to use same Embedding LLM to vectorise knowledge database and question
+
+# Day 2 Notes ###############################################
+- Load documents using langhcain & convert into chunks
+- Load documents chunks in Chroma DB using Huggingface Encoding model all-MiniLM-L6-v2
+- Visualize Chroma Vector data in 2D and 3D
