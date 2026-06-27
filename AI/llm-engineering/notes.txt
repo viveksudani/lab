@@ -315,3 +315,25 @@ Chat -> Question -> Vectorize question -> Vector database lookup -> Insert info 
 - Load documents using langhcain & convert into chunks
 - Load documents chunks in Chroma DB using Huggingface Encoding model all-MiniLM-L6-v2
 - Visualize Chroma Vector data in 2D and 3D
+
+# Day 3 Notes ###############################################
+Build RAG pipeline using croma vector DB and LangChain
+
+# Day 4 Notes ###############################################
+RAG pros:
+- Rapid time to market
+- Give an LLM vast expertise
+- Save on context length
+- Avoid distrcating with irrelevent context
+
+RAG Cons:
+- It's Hack
+- It's empirical aka trial & error
+- Great idea can have poor results
+
+Notes: Chunking strategy and embedding models can have a significant impact on performance
+
+Evaluations
+- Create a Test Set -Example questions set with right context indentified and reference answers provided
+- Measure Retrieval - like MRR (Mean Reciprocal Rank), nDCG, Recall@K, Precision@K
+	- Measure Answers - LLM as judge
