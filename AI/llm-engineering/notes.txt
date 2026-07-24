@@ -362,3 +362,24 @@ Read .md knowledgebase documents -> Use AI to convert them into chunks
 -> query expansion can be also used. (use chunks returned by original questions + use chunks returned by re-writted question)
 
 - Run evaluations tests to see how this RAG improvements reflects in improved numbers
+
+# Week6 Notes
+# Day 1 Notes ###############################################
+
+Project: The Price is Right:
+Curate Data: Use amazon reviews from huggingface
+- Parse data, Clean Data, Remove duplicates
+- Analyse data shapes and category (how skewed data is)
+- Filter dataset using cusom weight and custom filtering (to make sure data from all catrgories and prices points are mostly evenly distributed)
+
+# Day 2 Notes ###############################################
+
+Pre-process the data: (using LLMs)
+Understand data - quality, quantity, format
+Prepare
+Select - Choose LLMs, experiment, Train and validate with curated data
+Customize - Prompt, RAG, Agents, Finetune
+Prodcutionize
+
+- Convert full details (unstructured) to structured data: title, category, brand, description, details
+- Use jsonl batches for bulk LLM calling
