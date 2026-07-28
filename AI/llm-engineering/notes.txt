@@ -383,3 +383,17 @@ Prodcutionize
 
 - Convert full details (unstructured) to structured data: title, category, brand, description, details
 - Use jsonl batches for bulk LLM calling
+
+# Day 3 Notes ###############################################
+Try to predict prices using Baseline Models & Traditional ML
+Models tried: Liner Regression, NLP + LR, Random Forest, XGBoost
+
+# Day 4 Notes ###############################################
+Neural networks and Frontier LLMs
+- Create Neural network to pridict the product prices
+- Use LLM to predict the prices (GPT4.1, Claude Opus 4.5, Gemini 3 pro preview, GPT 5.1 and others)
+
+# Day 5 Notes ###############################################
+Finetune frontier model
+Use Supervised fine-tuning to improve openAI model
+- Didn't improved the model performance.
