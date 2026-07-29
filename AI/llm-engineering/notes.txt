@@ -397,3 +397,18 @@ Neural networks and Frontier LLMs
 Finetune frontier model
 Use Supervised fine-tuning to improve openAI model
 - Didn't improved the model performance.
+
+
+# Week7 Notes
+# Day 1 Notes ###############################################
+LoRA  - Low Rank Adapter
+Hyperpatameters
+r - How many dimensions the low rank matrices
+alpha - scaling factor
+Target Modules - Start by targeting the attention heads
+
+Q - Quantization
+
+Meta llama has embedding model size : 128256, 3072
+Where input token is converted into single hot vector for one 1 and rest zeros for  a token to form vector of 128256 size
+Simillarly output vector size is 128256 represnting probability of next token
